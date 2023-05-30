@@ -24,7 +24,7 @@ import ProductDetails from "./Pages/ProductDetails";
 import Categories from "./Pages/Categories";
 import CategoryProduct from "./Pages/CategoryProduct";
 import CartPage from "./Pages/CartPage";
-import AdminOrders from './Pages/Admin/AdminOrders';
+import AdminOrders from "./Pages/Admin/AdminOrders";
 function App() {
   return (
     <div className="App">

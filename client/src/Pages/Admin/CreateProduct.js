@@ -5,10 +5,10 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
-import "./styleAdminPanel.scss"
+import "./styleAdminPanel.scss";
 const { Option } = Select;
 const CreateProduct = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -52,10 +52,10 @@ const CreateProduct = () => {
         productData
       );
       if (data?.success) {
-        toast.error(data?.message)
-      }else{
+        toast.error(data?.message);
+      } else {
         toast.success("Product Created Successfuly");
-        navigate("/dashboard/admin/products")
+        navigate("/dashboard/admin/products");
       }
     } catch (error) {
       console.log(error);
@@ -176,7 +176,10 @@ const CreateProduct = () => {
                   </Select>
                 </div>
                 <div className="mb-3">
-                  <button className="btn btn-primary w-100" onClick={handleCreate}>
+                  <button
+                    className="btn btn-primary w-100"
+                    onClick={handleCreate}
+                  >
                     CREATE PRODUCT
                   </button>
                 </div>
