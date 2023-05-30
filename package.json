@@ -1,0 +1,39 @@
+{
+  "name": "finalstudywork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "proxy": "http://localhost:8080/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "braintree": "^3.15.0",
+    "braintree-web-drop-in-react": "^1.2.1",
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
+    "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.3.0",
+    "mongoose": "^7.1.0",
+    "morgan": "^1.10.0",
+    "package-lock.json": "^1.0.0",
+    "proxy": "^2.1.1",
+    "react": "^18.2.0",
+    "react-router": "^6.11.2",
+    "react-router-dom": "^6.11.2",
+    "slugify": "^1.6.6"
+  }
+}

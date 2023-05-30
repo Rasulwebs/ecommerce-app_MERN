@@ -1,0 +1,10 @@
+{
+  "frontend": {
+    "build": "npm run build",
+    "start": "npm run start"
+  },
+  "backend": {
+    "build": "npm run build",
+    "start": "npm run start"
+  }
+}

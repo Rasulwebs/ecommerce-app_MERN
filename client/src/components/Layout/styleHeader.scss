@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400&display=swap');
+
+/* 
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+.navbar{
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    line-height: 26px;
+    text-transform: uppercase;
+    box-shadow: 0 0px 10px -2px rgb(179, 179, 179);
+--webkit-box-shadow:0 0px 10px -2px rgb(179, 179, 179);
+}
+.nav-link{
+    font-weight: 400 !important;
+}
+.ant-scroll-number-only-unit, .current, .CartBadgeLink{
+    color: #fff !important;
+}
+.ant-scroll-number, .ant-badge-count{
+    top:10px !important; 
+    right: 6px !important;
+}
+.active{
+    border-bottom: 2px solid blueviolet;
+}
+.cartLink{
+    position: relative;
+}
+
+.navbar-brand{
+    font-weight: 700;
+    font-family: 'roboto',sans-serif;
+    letter-spacing: 2px;
+}
