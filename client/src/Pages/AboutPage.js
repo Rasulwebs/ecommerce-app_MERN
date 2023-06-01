@@ -32,10 +32,10 @@ const AboutPage = () => {
   );
 };
 
-Layout.defaultProps={
-  title:"MernStack app - buy now",
-  description:"MernStack project",
-  keywords:"MERN, react, scss,node, mongodb",
-  author:"Rasulwebs"
-}
+Layout.defaultProps = {
+  title: "MernStack app - buy now",
+  description: "MernStack project",
+  keywords: "MERN, react, scss,node, mongodb",
+  author: "Rasulwebs",
+};
 export default AboutPage;

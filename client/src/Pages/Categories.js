@@ -14,7 +14,10 @@ const Categories = () => {
               return (
                 <>
                   <div className="col-md-6 gx-1 gy-1" key={c._id}>
-                    <Link to={`/category/${c.slug}`} className="btn btn-primary text-light ">
+                    <Link
+                      to={`/category/${c.slug}`}
+                      className="btn btn-primary text-light "
+                    >
                       {c.name}
                     </Link>
                   </div>

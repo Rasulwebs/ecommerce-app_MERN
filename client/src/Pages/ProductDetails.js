@@ -28,7 +28,6 @@ const ProductDetails = () => {
     }
   };
 
-
   // get similar product
   const getSimilarProduct = async (pid, cid) => {
     try {
@@ -58,7 +57,7 @@ const ProductDetails = () => {
             <div className="col-md-6">
               <div className="">
                 <h2 className="text-center my-3">Product Details</h2>
-              
+
                 <h5> Name: {product.name}</h5>
                 <h5> Description: {product.description}</h5>
                 <h5> Price: {product.price}</h5>
@@ -71,10 +70,10 @@ const ProductDetails = () => {
           <div className="row my-2"></div>
           <h5 className=" text-center text-primary">SIMILIAR PRODUCT</h5>
           {relatedProducts.length < 1 && (
-                  <h3 className="text-secondary text-center my-5">
-                    No Similar Products Found
-                  </h3>
-                )}
+            <h3 className="text-secondary text-center my-5">
+              No Similar Products Found
+            </h3>
+          )}
           <div className="d-flex flex-wrap">
             {relatedProducts?.map((p) => {
               return (
