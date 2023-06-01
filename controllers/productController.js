@@ -6,8 +6,8 @@ import productModel from "../models/productModel.js";
 import orderModel from "../models/orderModel.js";
 import fs from "fs";
 import braintree from "braintree";
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 // payment gateway
 var gateway = new braintree.BraintreeGateway({
   environment: braintree.Environment.Sandbox,
@@ -367,13 +367,12 @@ export const braintreePaymentController = async (req, res) => {
         },
       },
       function (error, result) {
-        console.log(result.success)
+        console.log(result.success);
         if (result) {
           const order = new orderModel({
             products: cart,
             payment: result,
             buyer: req.user._id,
-          
           }).save();
           res.json({ ok: true });
         } else {
