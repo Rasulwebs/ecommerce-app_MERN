@@ -32,12 +32,12 @@ const AdminOrders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      console.log("orderid",orderId);
-      console.log(`value; ${value}`)
+      console.log("orderid", orderId);
+      console.log(`value; ${value}`);
       const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
-      console.log(`data; ${data}`)
+      console.log(`data; ${data}`);
       getOrders();
     } catch (error) {
       console.log(error);
@@ -66,8 +66,8 @@ const AdminOrders = () => {
                     </tr>
                   </thead>
                   {orders?.map((o, i) => {
-                    console.log(o)
-                    console.log("o._id"+o._id)
+                    console.log(o);
+                    console.log("o._id" + o._id);
 
                     return (
                       <>

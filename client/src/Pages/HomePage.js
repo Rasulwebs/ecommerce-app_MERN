@@ -6,7 +6,7 @@ import { Prices } from "../components/Prices";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cart";
 import { toast } from "react-hot-toast";
-import "./styleHomePage.scss"
+import "./styleHomePage.scss";
 const HomePage = () => {
   const navigate = useNavigate();
   const [cart, setCart] = useCart();
@@ -109,9 +109,9 @@ const HomePage = () => {
         <div className="container-fluid mt-2 mb-5">
           <div className="row">
             <div className="col-md-3">
-              <hr/>
+              <hr />
               <h4 className="text-center">Filter by Category</h4>
-              <hr/>
+              <hr />
               <div className="d-flex flex-column">
                 {categories?.map((cat) => {
                   return (
@@ -121,7 +121,7 @@ const HomePage = () => {
                         onChange={(e) => {
                           handleFilter(e.target.checked, cat._id);
                         }}
-                       className="fs-6"
+                        className="fs-6"
                       >
                         {cat.name}
                       </Checkbox>
@@ -130,9 +130,9 @@ const HomePage = () => {
                 })}
               </div>
               {/* Price Filter */}
-              <hr/>
+              <hr />
               <h4 className="text-center mt-2">Filter by Prices</h4>
-              <hr/>
+              <hr />
               <div className="d-flex flex-column">
                 <Radio.Group
                   onChange={(e) => {
@@ -167,55 +167,63 @@ const HomePage = () => {
               {/* {JSON.stringify(radio, null, 4)} */}
               <h2 className="text-center">All Products</h2>
               <div className="d-flex flex-wrap">
-              {products.length ? (<>
-                {products?.map((p) => {
-                  return (
-                    <>
-                      <div
-                        className="card productCardAdmin m-2"
-                        style={{ width: "18rem" }}
-                      >
-                        <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
-                          className="card-img-top productCardAdminImages2"
-                          alt={p.name}
-                        />
-                        <div className="card-body">
-                          <h5 className="card-title">{p.name}</h5>
-                          <p className="card-text">
-                            {p.description.length < 28
-                              ? p.description
-                              : `${p.description.substring(0, 28)}...`}
-                          </p>
-                          <p className="card-text">{p.price}</p>
+                {products.length ? (
+                  <>
+                    {products?.map((p) => {
+                      return (
+                        <>
+                          <div
+                            className="card productCardAdmin m-2"
+                            style={{ width: "18rem" }}
+                          >
+                            <img
+                              src={`/api/v1/product/product-photo/${p._id}`}
+                              className="card-img-top productCardAdminImages2"
+                              alt={p.name}
+                            />
+                            <div className="card-body">
+                              <h5 className="card-title">{p.name}</h5>
+                              <p className="card-text">
+                                {p.description.length < 28
+                                  ? p.description
+                                  : `${p.description.substring(0, 28)}...`}
+                              </p>
+                              <p className="card-text">{p.price}</p>
 
-                          <button
-                            className="btn btn-primary m-1"
-                            onClick={() => {
-                              navigate(`/product/${p.slug}`);
-                            }}
-                          >
-                            More Details
-                          </button>
-                          <button
-                            className="btn btn-warning m-1"
-                            onClick={() => {
-                              setCart([...cart, p]);
-                              localStorage.setItem(
-                                "cart",
-                                JSON.stringify([...cart, p])
-                              );
-                              toast.success("Item Added to Cart");
-                            }}
-                          >
-                            Add To Card
-                          </button>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })}
-              </>) : (<><h2 className="text-center text-secondary noteProductTitle">Note Product</h2></>)}
+                              <button
+                                className="btn btn-primary m-1"
+                                onClick={() => {
+                                  navigate(`/product/${p.slug}`);
+                                }}
+                              >
+                                More Details
+                              </button>
+                              <button
+                                className="btn btn-warning m-1"
+                                onClick={() => {
+                                  setCart([...cart, p]);
+                                  localStorage.setItem(
+                                    "cart",
+                                    JSON.stringify([...cart, p])
+                                  );
+                                  toast.success("Item Added to Cart");
+                                }}
+                              >
+                                Add To Card
+                              </button>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-center text-secondary noteProductTitle">
+                      Note Product
+                    </h2>
+                  </>
+                )}
               </div>
               <div className="m-2">
                 {products && products.length < total && (
