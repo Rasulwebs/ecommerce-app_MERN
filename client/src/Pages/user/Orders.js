@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import UserMenu from "../../components/Layout/UserMenu";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
-import moment from "moment"
+import moment from "moment";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -55,43 +55,42 @@ const Orders = () => {
                             <td>{o?.products?.length}</td>
                           </tr>
                         </tbody>
-                        
                       </>
                     );
                   })}
                 </table>
-                {orders?.map((o)=>{
-                  
-                  return <>
-                  <div>
-                {o?.products?.map((p,i) => {
-                return (
-                  <>
-                    <div className="row border mb-3">
-                      <div className="col-md-4">
-                        <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
-                          className="card-img-top productCardAdminImages2"
-                          alt={p.name}
-                        />
+                {orders?.map((o) => {
+                  return (
+                    <>
+                      <div>
+                        {o?.products?.map((p, i) => {
+                          return (
+                            <>
+                              <div className="row border mb-3">
+                                <div className="col-md-4">
+                                  <img
+                                    src={`/api/v1/product/product-photo/${p._id}`}
+                                    className="card-img-top productCardAdminImages2"
+                                    alt={p.name}
+                                  />
+                                </div>
+                                <div className="col-md-8 py-2">
+                                  <h3>{p.name}</h3>
+                                  <p>
+                                    {p.description.length < 30
+                                      ? p.description
+                                      : `${p.description.substring(0, 30)}...`}
+                                  </p>
+                                  <h4>Price: {p.price}</h4>
+                                </div>
+                              </div>
+                            </>
+                          );
+                        })}
                       </div>
-                      <div className="col-md-8 py-2">
-                        <h3>{p.name}</h3>
-                        <p>
-                          {p.description.length < 30
-                            ? p.description
-                            : `${p.description.substring(0, 30)}...`}
-                        </p>
-                        <h4>Price: {p.price}</h4>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
-                </div>
-                  </>
+                    </>
+                  );
                 })}
-               
               </div>
             </div>
           </div>

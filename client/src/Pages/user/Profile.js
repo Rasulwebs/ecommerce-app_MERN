@@ -31,23 +31,23 @@ const Profile = () => {
     // console.log(name, email, phone, address, password);
 
     try {
-      const {data} = await axios.put(`/api/v1/auth/profile`, {
+      const { data } = await axios.put(`/api/v1/auth/profile`, {
         name,
         email,
         phone,
         address,
         password,
       });
-      console.log(data)
-      if(data?.error){
-        toast.error(data?.error)
-      }else{
-        setAuth({...auth,user:data?.updatedUser})
-        let ls=localStorage.getItem("auth")
-        ls=JSON.parse(ls)
-        ls.user=data.updatedUser
-        localStorage.setItem("auth", JSON.stringify(ls))
-        toast.success("Profile Updated Successfully")
+      console.log(data);
+      if (data?.error) {
+        toast.error(data?.error);
+      } else {
+        setAuth({ ...auth, user: data?.updatedUser });
+        let ls = localStorage.getItem("auth");
+        ls = JSON.parse(ls);
+        ls.user = data.updatedUser;
+        localStorage.setItem("auth", JSON.stringify(ls));
+        toast.success("Profile Updated Successfully");
       }
       // console.log(res.data.success)
     } catch (error) {
@@ -76,7 +76,6 @@ const Profile = () => {
                       className="form-control"
                       id="exampleInputName1"
                       placeholder="Enter Your Name"
-                      
                       autoFocus
                     />
                   </div>
@@ -88,7 +87,6 @@ const Profile = () => {
                       className="form-control"
                       id="exampleInputEmail1"
                       placeholder="Enter Your Email"
-                      
                       disabled
                     />
                   </div>
@@ -100,7 +98,6 @@ const Profile = () => {
                       className="form-control"
                       id="exampleInputPhone1"
                       placeholder="Enter Your Phone"
-                      
                     />
                   </div>
                   <div className="mb-3 ">
@@ -111,7 +108,6 @@ const Profile = () => {
                       onChange={(e) => setAddress(e.target.value)}
                       id="exampleInputAddress1"
                       placeholder="Enter Your Address"
-                      
                     />
                   </div>
                   <div className="mb-3">
@@ -122,7 +118,6 @@ const Profile = () => {
                       className="form-control"
                       id="exampleInputPassword1"
                       placeholder="Enter Your Password"
-                      
                     />
                   </div>
 

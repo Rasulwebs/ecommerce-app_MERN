@@ -6,38 +6,37 @@ import toast from "react-hot-toast";
 import "./styleLoginPage.scss";
 
 const ForgotPassword = () => {
-    const [email, setEmail] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [answer, setAnswer] = useState("");
+  const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [answer, setAnswer] = useState("");
 
-  
-    const navigate = useNavigate();
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      // console.log(email, password);
-  
-      try {
-        const res = await axios.post(`/api/v1/auth/forgot-password`, {
-          email,
-          newPassword,
-          answer
-        });
-  
-        if (res && res.data.success) {
-          toast.success(res.data && res.data.message, { duration: 5000 });
-          navigate("/login");
-        } else {
-          toast.error(res.data.message);
-        }
-      } catch (error) {
-        console.log(error);
-        toast.error("Somenthing want wrong");
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(email, password);
+
+    try {
+      const res = await axios.post(`/api/v1/auth/forgot-password`, {
+        email,
+        newPassword,
+        answer,
+      });
+
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message, { duration: 5000 });
+        navigate("/login");
+      } else {
+        toast.error(res.data.message);
       }
-    };
-    return (
-        <>
-         <Layout title={"Forgot Password"}>
-            <div className="container">
+    } catch (error) {
+      console.log(error);
+      toast.error("Somenthing want wrong");
+    }
+  };
+  return (
+    <>
+      <Layout title={"Forgot Password"}>
+        <div className="container">
           <div className="loginWrapp mt-5 ">
             <h2 className="mb-4">RESET PASSWORD </h2>
             <form className="fs-5 loginForms" onSubmit={handleSubmit}>
@@ -80,10 +79,9 @@ const ForgotPassword = () => {
             </form>
           </div>
         </div>
-            
-            </Layout>   
-        </>
-    );
+      </Layout>
+    </>
+  );
 };
 
 export default ForgotPassword;

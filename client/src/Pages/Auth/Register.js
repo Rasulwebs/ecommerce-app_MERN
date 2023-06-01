@@ -27,7 +27,7 @@ const Register = () => {
         phone,
         address,
         password,
-        answer
+        answer,
       });
       // console.log(res.data.success)
 

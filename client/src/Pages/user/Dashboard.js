@@ -5,7 +5,7 @@ import UserMenu from "../../components/Layout/UserMenu";
 import { useAuth } from "../../context/auth";
 const Dashboard = () => {
   const [auth] = useAuth();
-  console.log(auth)
+  console.log(auth);
   return (
     <>
       <Layout title={"Daashboard - Mern Stack App"}>

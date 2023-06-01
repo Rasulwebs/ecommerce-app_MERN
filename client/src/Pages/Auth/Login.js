@@ -72,7 +72,9 @@ const Login = () => {
               <button
                 type="button"
                 className="btn  w-100 text-primary mb-2"
-                onClick={()=>{navigate("/forgot-password")}}
+                onClick={() => {
+                  navigate("/forgot-password");
+                }}
               >
                 Forgot Password
               </button>
