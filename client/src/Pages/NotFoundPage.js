@@ -4,6 +4,7 @@ import "./styleErrorPage.scss";
 import { useNavigate } from "react-router-dom";
 const NotFoundPage = () => {
   const pageNavigate = useNavigate();
+  
   return (
     <>
       <Layout title={"go back- Page not found"}>
