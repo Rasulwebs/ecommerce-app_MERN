@@ -158,7 +158,6 @@ export const forgotPasswordController = async (req, res) => {
 };
 
 // test controller
-
 export const testController = (req, res) => {
   try {
     res.send("Protected Route");
@@ -226,7 +225,6 @@ export const getOrderController = async (req, res) => {
 };
 
 // all orders
-
 export const getAllOrderController = async (req, res) => {
   try {
     const orders = await orderModel
