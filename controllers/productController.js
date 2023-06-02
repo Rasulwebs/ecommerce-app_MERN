@@ -8,6 +8,7 @@ import fs from "fs";
 import braintree from "braintree";
 import dotenv from "dotenv";
 dotenv.config();
+
 // payment gateway
 var gateway = new braintree.BraintreeGateway({
   environment: braintree.Environment.Sandbox,
@@ -15,6 +16,7 @@ var gateway = new braintree.BraintreeGateway({
   publicKey: process.env.BRAINTREE_PUBLIC_KEY,
   privateKey: process.env.BRAINTREE_PRIVATE_KEY,
 });
+
 export const createProductController = async (req, res) => {
   try {
     const { name, slug, description, price, category, quanity, shipping } =
@@ -125,7 +127,6 @@ export const productPhotoController = async (req, res) => {
 };
 
 // delete product
-
 export const deleteProductController = async (req, res) => {
   try {
     await productModel.findByIdAndDelete(req.params.pid).select("-photo");
@@ -218,7 +219,6 @@ export const productFilterController = async (req, res) => {
 };
 
 // product count
-
 export const productCountController = async (req, res) => {
   try {
     const total = await productModel.find({}).estimatedDocumentCount();
@@ -237,7 +237,6 @@ export const productCountController = async (req, res) => {
 };
 
 // product list base on page
-
 export const productListController = async (req, res) => {
   try {
     const perPage = 4;

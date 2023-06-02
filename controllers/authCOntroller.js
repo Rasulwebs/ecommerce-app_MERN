@@ -36,7 +36,6 @@ export const registerController = async (req, res) => {
     }
 
     // Register User
-
     const hashedPAssword = await hashPassword(password);
     const user = await new userModel({
       name,
@@ -63,7 +62,6 @@ export const registerController = async (req, res) => {
 };
 
 // Post Login =============================================================
-
 export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -118,7 +116,6 @@ export const loginController = async (req, res) => {
 };
 
 // forgotPasswordController =====================================
-
 export const forgotPasswordController = async (req, res) => {
   try {
     const { email, answer, newPassword } = req.body;
