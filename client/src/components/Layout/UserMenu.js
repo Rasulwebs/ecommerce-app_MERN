@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const UserMenu = () => {
-    return (
-        <>
-            <div className="text-center">
+  return (
+    <>
+      <div className="text-center">
         <div className="list-group">
           <h2>Dashboard</h2>
           <NavLink
@@ -19,11 +19,10 @@ const UserMenu = () => {
           >
             Orders
           </NavLink>
-         
         </div>
       </div>
-        </>
-    );
+    </>
+  );
 };
 
 export default UserMenu;

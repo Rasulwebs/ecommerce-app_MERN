@@ -13,7 +13,7 @@ const SearchInput = () => {
         `/api/v1/product/search/${values.keyword}`
       );
       setValues({ ...values, results: data });
-      navigate("/search")
+      navigate("/search");
     } catch (error) {
       console.log(error);
     }

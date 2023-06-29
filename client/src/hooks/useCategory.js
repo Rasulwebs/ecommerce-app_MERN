@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 export default function useCategory() {
   const [categories, setCategories] = useState([]);
 
-  
   // get category
   const getCategories = async () => {
     try {
@@ -14,8 +13,8 @@ export default function useCategory() {
       console.log(error);
     }
   };
-  useEffect(()=>{
-    getCategories()
-  },[])
-  return categories
+  useEffect(() => {
+    getCategories();
+  }, []);
+  return categories;
 }
