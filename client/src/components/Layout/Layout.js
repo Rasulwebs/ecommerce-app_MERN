@@ -20,7 +20,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
         <Toaster
           toastOptions={{
             success: { style: { background: "green", color: "white" } },
-            error:{style:{background:"red",color:"white"}}
+            error: { style: { background: "red", color: "white" } },
           }}
         />
       </main>

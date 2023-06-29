@@ -132,11 +132,15 @@ const Header = () => {
                 )}
 
                 <li className="nav-item">
-                  <Badge count={cart?.length} className="nav-link my-0 pt-1 CartBadgeLink" showZero>
-                    <NavLink to="/cart" className="nav-link ">Cart </NavLink>
-                    
+                  <Badge
+                    count={cart?.length}
+                    className="nav-link my-0 pt-1 CartBadgeLink"
+                    showZero
+                  >
+                    <NavLink to="/cart" className="nav-link ">
+                      Cart{" "}
+                    </NavLink>
                   </Badge>
-              
                 </li>
               </ul>
             </div>
